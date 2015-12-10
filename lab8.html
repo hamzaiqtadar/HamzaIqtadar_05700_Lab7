@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>LAB 7</title>
+    </head>
+    <body>
+        <div id="crtfrm" align="center">
+            <h1><a href="#" onclick="createform()"> CREATE FORM </a></h1>
+            <div id="div1" style="background-color:green;padding-bottom:10px"></div>
+            <div id="div2" style="background-color:aqua;padding-bottom:10px"></div>
+            <div id="div3" style="background-color:green;padding-bottom:10px"></div>
+            <div id="div4" style="background-color:aqua;padding-bottom:10px"></div>
+            <div id="div5" style="background-color:green;padding-bottom:10px"></div>
+            <div id="div6" style="background-color:aqua;padding-bottom:10px"></div>
+            <div id="div7" style="background-color:green;padding-bottom:10px"></div>
+            <div id="div8" style="background-color:aqua;padding-bottom:10px"></div>
+            <div id="div9" style="background-color:green;padding-bottom:10px"></div>
+        </div>
+        <script>
+        var json = '{"form":[';
+        var c1,c2,c3,c4,c5,c6,c7,c8;
+        var tef=false;
+            var pas=false;
+            var rd=false;
+            var cb=false;
+            var fi=false;
+            var ni=false;
+            var ta=false;
+            var o=false;
+        function createform(){
+       // var oReq = new XMLHttpRequest();
+            //oReq.create(form.json);
+		//oReq.open("get", "form.json", true);
+		//oReq.send();
+            /* var updatelocaldata=function(data){
+            if(supports_html5_storage()){
+            localStorage.setItem('form',JSOn.stingify(data))}}
+            var getLocalData=function(){
+            if(supports_html5_storage()){
+            var formData=JSON.parse(localStorage.getItem('form'));
+            if(formData!==null){
+            return buildForm(formData);}
+            }
+            }*/
+            var formid=prompt("Enter Form Name: " );
+            var formsbmt=prompt("Enter Submission Link: ");
+                var form=document.createElement("form");
+                form.setAttribute("name",formid);
+                form.setAttribute("id","form1");
+                form.setAttribute("action",formsbmt);
+                document.getElementById("crtfrm").appendChild(form);
+                var a1 = document.createElement("a");
+                var a2 = document.createElement("a");
+                var a3 = document.createElement("a");
+                var a4 = document.createElement("a");
+                var a5 = document.createElement("a");
+                var a6 = document.createElement("a");
+                var a7 = document.createElement("a");
+                var a8 = document.createElement("a");
+                var a9 = document.createElement("a");
+                var submit1 = document.createElement("input");
+                a1.setAttribute("href","#");
+                a2.setAttribute("href","#");
+                a3.setAttribute("href","#");
+                a4.setAttribute("href","#");
+                a5.setAttribute("href","#");
+                a6.setAttribute("href","#");
+                a7.setAttribute("href","#");
+                a8.setAttribute("href","#");
+                a9.setAttribute("href","#");
+				a1.id = "at1";
+                a2.id = "at2";
+                a3.id = "at3";
+                a4.id = "at4";
+                a5.id = "at5";
+                a6.id = "at6";
+                a7.id = "at7";
+                a8.id = "at8";
+                a9.id = "at9";
+                submit1.setAttribute("type","submit");
+                form.appendChild(submit1);
+                var br = document.createElement("br");
+                form.appendChild(br);
+                var a = document.createTextNode(" Create New Text Field ");
+                var b = document.createTextNode(" Create New Password Input ");
+                var c = document.createTextNode(" Create New Radio Button ");
+                var d = document.createTextNode(" Create New Checkbox ");
+                var e = document.createTextNode(" Create New File Input ");
+                var f = document.createTextNode(" Create New Number Input ");
+                var g = document.createTextNode(" Create New Keygen Input ");
+                var h = document.createTextNode(" Create New Text Area ");
+                var i = document.createTextNode(" Create New Output ");
+                a1.appendChild(a);
+                a2.appendChild(b);
+                a3.appendChild(c);
+                a4.appendChild(d);
+                a5.appendChild(e);
+                a6.appendChild(f);
+                a7.appendChild(g);
+                a8.appendChild(h);
+                a9.appendChild(i);
+                document.getElementById("div1").appendChild(a1);
+                document.getElementById("div2").appendChild(a2);
+                document.getElementById("div3").appendChild(a3);
+                document.getElementById("div4").appendChild(a4);
+                document.getElementById("div5").appendChild(a5);
+                document.getElementById("div6").appendChild(a6);
+                document.getElementById("div7").appendChild(a7);
+                document.getElementById("div8").appendChild(a8);
+                document.getElementById("div9").appendChild(a9);
+                a1.onclick=function(){
+                    tef=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","text");
+                    txt1.setAttribute("id","tf");
+                    txt1.setAttribute("value","John");
+                    var txtfield = prompt("Enter the label of the Text Field: ");
+                    c1 = prompt("Enter the minimum length of the response: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                    var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                        form.removeChild(br);
+                    }
+                    json+='{"'+txtfield+'":"'+txt1.value+'"},';
+                };
+                a2.onclick=function(){
+                    pas=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","password");
+                    txt1.setAttribute("value","password");
+                    txt1.setAttribute("id","ps");
+                    var txtfield = prompt("Enter the label of the Password Field: ");
+                    c2 = prompt("Enter the minimum length of the response: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                    json+='{"'+txtfield+'":"'+txt1.value+'"},';
+                };
+                a3.onclick=function(){
+                    rd=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","radio");
+                    txt1.setAttribute("value","checked");
+                    var txtfield = prompt("Enter the label of the Radio Button: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                    json+='{"'+txtfield+'":"'+txt1.value+'"},';
+                };
+                a4.onclick=function(){
+                    cb=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","checkbox");
+                    txt1.setAttribute("value","checked");
+                    var txtfield = prompt("Enter the label of the Text Field: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                    json+='{"'+txtfield+'":"'+txt1.value+'"},';
+                };
+                a5.onclick=function(){
+                    fi=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","file");
+                    var txtfield = prompt("Enter the label for File Upload: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                };
+                a6.onclick=function(){
+                    ni=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","number");
+                    txt1.setAttribute("value","0");
+                    txt1.setAttribute("id","nm");
+                    var txtfield = prompt("Enter the label of the Number: ");
+                    c3 = prompt("Enter the maximum value of the response: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                    json+='{"'+txtfield+'":"'+txt1.value+'"},';
+                };
+                a7.onclick=function(){
+                    var txt1 = document.createElement("keygen");
+                    //txt1.setAttribute("type","keygen");
+                    var txtfield = prompt("Enter the label of the Text Field: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                };
+                a8.onclick=function(){
+                    ta=true;
+                    var txt1 = document.createElement("textarea");
+                    txt1.setAttribute("value","This is a text area.");
+                    txt1.setAttribute("id","tar");
+                    var txtfield = prompt("Enter the label of the Text Area Field: ");
+                    c4 = prompt("Enter the minimum length of the response: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                    json+='{"'+txtfield+'":"'+txt1.value+'"},';
+                };
+                a9.onclick=function(){
+                    o=true;
+                    var txt1 = document.createElement("input");
+                    txt1.setAttribute("type","output");
+                    var txtfield = prompt("Enter the label of the Output: ");
+                    var y = document.createTextNode(txtfield);
+                    form.appendChild(y);
+                    form.appendChild(txt1);
+                                        var btn = document.createElement("input");
+                    btn.setAttribute("type","button");
+                    btn.setAttribute("id","btn1");
+                    btn.setAttribute("value","Remove");
+                    form.appendChild(btn);
+                    var br = document.createElement("br");
+                    form.appendChild(br);
+                    btn.onclick=function(){
+                        form.removeChild(btn);
+                        form.removeChild(txt1);
+                        form.removeChild(y);
+                    }
+                };
+                submit1.onclick=function(){
+                    
+                    
+                    if (tef && document.forms[formid]["tf"].value.length<c1)
+                    {
+                       alert("The text needs to be "+c1+" characters long.");
+                        return;
+                    }
+                    if (pas && document.forms[formid]["ps"].value.length<c2)
+                    {
+                       alert("The password needs to be "+c2+" characters long.");
+                        return;
+                    }
+                    if (ni && document.forms[formid]["nm"].value>c3)
+                    {
+                       alert("The number needs to be smaller than "+c3);
+                        return;
+                    }
+                    if (ta && document.forms[formid]["tar"].value>c4)
+                    {
+                       alert("The text needs to be "+c4+" characters long.");
+                        return;
+                    }
+                    
+                    json = json.substring(0, json.length - 1);
+                    json+="]}";
+                    console.log(JSON.stringify(json));
+                    localStorage.setItem("Form", JSON.stringify(json));
+                    alert(localStorage.getItem("Form"));
+                    var string=localStorage.getItem("Form");
+                /*    <?php
+                        $explode('/',string);
+                        $unique = array_unique($explode);
+                        if(sizeof($explode) != sizeof($unique)){
+                            echo "There are duplicates";
+                        }
+                        else{
+                            echo "No duplicates";
+                        } 
+                    ?>*/
+                };
+            }
+        </script>
+    </body>
+</html>
